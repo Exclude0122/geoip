@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/python3
 import csv
 import ipaddress
 import sys
