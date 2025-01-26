@@ -33,4 +33,4 @@ jobs:
             geoip-only-kp-private.dat
             private.dat
           name: ${{ env.NEW_TAG }}
-          tag: ${{ env.NEW_TAG }}
+          tag_name: ${{ env.NEW_TAG }}
