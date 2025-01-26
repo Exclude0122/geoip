@@ -1,0 +1,31 @@
+name: Release
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: pip install -r requirements.txt
+      - run: curl -L https://ipinfo.io/data/free/country.csv.gz?token=${{ secrets.IPINFO }} -o country.csv.gz
+      - run: gzip -d country.csv.gz
+      - run: python3 main.py country.csv -o geoip.dat
+      - run: python3 main.py country.csv -o geoip-only-cn-private.dat -f cn -f private
+      - run: python3 main.py country.csv -o geoip-only-ru-private.dat -f ru -f private
+      - run: python3 main.py country.csv -o geoip-only-ir-private.dat -f ir -f private
+      - run: python3 main.py country.csv -o geoip-only-kp-private.dat -f kp -f private
+      - run: python3 main.py country.csv -o private.dat -f private
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            geoip.dat
+            geoip-only-cn-private.dat
+            geoip-only-ru-private.dat
+            geoip-only-ir-private.dat
+            geoip-only-kp-private.dat
+            private.dat
