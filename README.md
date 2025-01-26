@@ -2,6 +2,17 @@
 
 Convert geoip databases to v2ray format.
 
+## Releases
+
+- [geoip.dat](https://github.com/Exclude0122/geoip/releases/latest/download/geoip.dat)
+- [geoip-only-cn-private.dat](https://github.com/Exclude0122/geoip/releases/latest/download/geoip-only-cn-private.dat)
+- [geoip-only-ir-private.dat](https://github.com/Exclude0122/geoip/releases/latest/download/geoip-only-ir-private.dat)
+- [geoip-only-kp-private.dat](https://github.com/Exclude0122/geoip/releases/latest/download/geoip-only-kp-private.dat)
+- [geoip-only-ru-private.dat](https://github.com/Exclude0122/geoip/releases/latest/download/geoip-only-ru-private.dat)
+- [private.dat](https://github.com/Exclude0122/geoip/releases/latest/download/private.dat)
+
+IP address data powered by [IPinfo](https://ipinfo.io)
+
 ## Usage
 
 ```
